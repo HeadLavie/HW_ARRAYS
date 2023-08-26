@@ -28,14 +28,7 @@ public class StatsService {
 
     public int averageSales(long[] sales) {
 
-        int sum = 0;
-
-        for (int i = 0; i < sales.length; i++) {
-
-            sum = sum + (int) sales[i];
-
-        }
-        int average = sum / sales.length;
+        int average = sumSales(sales) / sales.length;
         return average;
     }
 
@@ -74,20 +67,13 @@ public class StatsService {
 
     public int belowAverageSales(long[] sales) {
 
-        int sum = 0;
-
-        for (int i = 0; i < sales.length; i++) {
-
-            sum = sum + (int) sales[i];
-
-        }
-        int average = sum / sales.length;
+        int average = sumSales(sales) / sales.length;
 
         int belowAverage = 0;
 
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] < average) {
-                belowAverage = belowAverage + 1;
+                belowAverage++;
             }
         }
         return belowAverage;

@@ -1,5 +1,7 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import ru.netology.stats.StatsService;
 
 public class StatsServiceTest {
@@ -21,10 +23,10 @@ public class StatsServiceTest {
     public void shouldFindSumSales() {
         StatsService service = new StatsService();
 
-        long[] temps = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expected = 180;
-        int actual = service.sumSales(temps);
+        int actual = service.sumSales(sales);
 
         Assertions.assertEquals(expected, actual);
 
@@ -42,6 +44,7 @@ public class StatsServiceTest {
         Assertions.assertEquals(expected, actual);
 
     }
+
     @Test
     public void shouldFindMaxSales() {
         StatsService service = new StatsService();
